@@ -32,15 +32,6 @@ In the paper two main architectures are mentioned. Firstly, a modified version o
 
 The first trained model during this project was the mentioned delated convolutional network.
 
-**Used Libraries**
-| Library    | Version |
-|----------- | ------- |
-| Tensorflow | 2.3.0   |
-| Keras      | 2.4.0   |
-| Scipy      | 1.4.1   |
-| Numpy      | 1.18.5  |
-   
-
 ### **2. Optimize model with different methods**  
 There are various constraints that should be fullfield.  
 - **Memory constraints**  
