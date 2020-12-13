@@ -1,0 +1,3 @@
+Dilation: 149,343
+No Dilation: 229,335
+No Dilatoin TFL: 131,838

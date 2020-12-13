@@ -1,0 +1,1910 @@
+{
+    "_allocate_inputs": 0,
+    "_allocate_outputs": 0,
+    "cli_parameters": "analyze --name wv18_v1 -m /home/xeratec/Documents/ETH/MLonMCU/B_Project/Model/01_OrangeMicroDark_WaveNet18_v1.h5 --type keras --compression 1 --verbosity 1 --workspace /tmp/mxAI_workspace52392193606282894875213904091995 --output /home/xeratec/.stm32cubemx",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 4
+    },
+    "cli_version_str": "1.4.0",
+    "compression": {
+        "factor": null,
+        "layers": {}
+    },
+    "date_time": "Fri Nov 20 20:18:02 2020",
+    "error": 0,
+    "error_str": [],
+    "evaluation_measures": [],
+    "evaluation_status": "NOT EVALUATED",
+    "exec_cmd": "analyze",
+    "exec_duration": 0.6796014308929443,
+    "hash": "6ee997bffb6d9005bb5208fcbfc7e6ec",
+    "inputs": [
+        "input_0"
+    ],
+    "l2_error": -1.0,
+    "l2_status": "NOT EVALUATED",
+    "layers": [
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 8180,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        2045,
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "input_0",
+            "out_shapes": [
+                [
+                    1,
+                    2045,
+                    1
+                ]
+            ],
+            "outputs": [
+                "input_0"
+            ],
+            "shape": [
+                1,
+                2045,
+                1
+            ],
+            "type": "Input"
+        },
+        {
+            "dilation": [
+                1,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 130760,
+                "n_params": 32,
+                "psize": 128,
+                "rom_n_params": 32,
+                "rom_output": {
+                    "c_size": 65376,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        2043,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 128,
+                "rom_size_params": 128,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 0,
+            "inputs": [
+                "input_0"
+            ],
+            "name": "conv1d",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    2043,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [
+                "conv1d"
+            ],
+            "name": "conv1d_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    2043,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                2,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 473056,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 65248,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        2039,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 1,
+            "inputs": [
+                "conv1d_nl"
+            ],
+            "name": "conv1d_1",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    2039,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_1"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 1,
+            "inputs": [
+                "conv1d_1"
+            ],
+            "name": "conv1d_1_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    2039,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_1_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                4,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 471200,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 64992,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        2031,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 2,
+            "inputs": [
+                "conv1d_1_nl"
+            ],
+            "name": "conv1d_2",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    2031,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_2"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 2,
+            "inputs": [
+                "conv1d_2"
+            ],
+            "name": "conv1d_2_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    2031,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_2_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                8,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 467488,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 64480,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        2015,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 3,
+            "inputs": [
+                "conv1d_2_nl"
+            ],
+            "name": "conv1d_3",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    2015,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_3"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 3,
+            "inputs": [
+                "conv1d_3"
+            ],
+            "name": "conv1d_3_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    2015,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_3_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                16,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 460064,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 63456,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1983,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 4,
+            "inputs": [
+                "conv1d_3_nl"
+            ],
+            "name": "conv1d_4",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1983,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_4"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 4,
+            "inputs": [
+                "conv1d_4"
+            ],
+            "name": "conv1d_4_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1983,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_4_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                32,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 445216,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 61408,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1919,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 5,
+            "inputs": [
+                "conv1d_4_nl"
+            ],
+            "name": "conv1d_5",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1919,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_5"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 5,
+            "inputs": [
+                "conv1d_5"
+            ],
+            "name": "conv1d_5_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1919,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_5_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                64,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 415520,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 57312,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1791,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 6,
+            "inputs": [
+                "conv1d_5_nl"
+            ],
+            "name": "conv1d_6",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1791,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_6"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 6,
+            "inputs": [
+                "conv1d_6"
+            ],
+            "name": "conv1d_6_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1791,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_6_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                128,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 356128,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 49120,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1535,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 7,
+            "inputs": [
+                "conv1d_6_nl"
+            ],
+            "name": "conv1d_7",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1535,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_7"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 7,
+            "inputs": [
+                "conv1d_7"
+            ],
+            "name": "conv1d_7_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1535,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_7_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                256,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 237344,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 32736,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1023,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 8,
+            "inputs": [
+                "conv1d_7_nl"
+            ],
+            "name": "conv1d_8",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1023,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_8"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 8,
+            "inputs": [
+                "conv1d_8"
+            ],
+            "name": "conv1d_8_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1023,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_8_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                1,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 236880,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 32672,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1021,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 9,
+            "inputs": [
+                "conv1d_8_nl"
+            ],
+            "name": "conv1d_9",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1021,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_9"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 9,
+            "inputs": [
+                "conv1d_9"
+            ],
+            "name": "conv1d_9_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1021,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_9_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                2,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 235952,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 32544,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1017,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 10,
+            "inputs": [
+                "conv1d_9_nl"
+            ],
+            "name": "conv1d_10",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1017,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_10"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 10,
+            "inputs": [
+                "conv1d_10"
+            ],
+            "name": "conv1d_10_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1017,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_10_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                4,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 234096,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 32288,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1009,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 11,
+            "inputs": [
+                "conv1d_10_nl"
+            ],
+            "name": "conv1d_11",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    1009,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_11"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 11,
+            "inputs": [
+                "conv1d_11"
+            ],
+            "name": "conv1d_11_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    1009,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_11_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                8,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 230384,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 31776,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        993,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 12,
+            "inputs": [
+                "conv1d_11_nl"
+            ],
+            "name": "conv1d_12",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    993,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_12"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 12,
+            "inputs": [
+                "conv1d_12"
+            ],
+            "name": "conv1d_12_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    993,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_12_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                16,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 222960,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 30752,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        961,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 13,
+            "inputs": [
+                "conv1d_12_nl"
+            ],
+            "name": "conv1d_13",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    961,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_13"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 13,
+            "inputs": [
+                "conv1d_13"
+            ],
+            "name": "conv1d_13_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    961,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_13_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                32,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 208112,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 28704,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        897,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 14,
+            "inputs": [
+                "conv1d_13_nl"
+            ],
+            "name": "conv1d_14",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    897,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_14"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 14,
+            "inputs": [
+                "conv1d_14"
+            ],
+            "name": "conv1d_14_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    897,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_14_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                64,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 178416,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 24608,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        769,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 15,
+            "inputs": [
+                "conv1d_14_nl"
+            ],
+            "name": "conv1d_15",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    769,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_15"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 15,
+            "inputs": [
+                "conv1d_15"
+            ],
+            "name": "conv1d_15_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    769,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_15_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                128,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 119024,
+                "n_params": 200,
+                "psize": 800,
+                "rom_n_params": 200,
+                "rom_output": {
+                    "c_size": 16416,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        513,
+                        1,
+                        8,
+                        1
+                    ]
+                },
+                "rom_size": 800,
+                "rom_size_params": 800,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 16,
+            "inputs": [
+                "conv1d_15_nl"
+            ],
+            "name": "conv1d_16",
+            "num_filters": 8,
+            "out_shapes": [
+                [
+                    8,
+                    513,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_16"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 16,
+            "inputs": [
+                "conv1d_16"
+            ],
+            "name": "conv1d_16_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    8,
+                    513,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_16_nl"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "dilation": [
+                256,
+                1
+            ],
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 30,
+                "n_params": 25,
+                "psize": 100,
+                "rom_n_params": 25,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 100,
+                "rom_size_params": 100,
+                "rom_trans": null
+            },
+            "filter_size": [
+                3,
+                1
+            ],
+            "groups": 1,
+            "id": 17,
+            "inputs": [
+                "conv1d_16_nl"
+            ],
+            "name": "conv1d_17",
+            "num_filters": 1,
+            "out_shapes": [
+                [
+                    1,
+                    1,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_17"
+            ],
+            "pad": [
+                0,
+                0
+            ],
+            "stride": [
+                1,
+                1
+            ],
+            "type": "Conv2D",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 17,
+            "inputs": [
+                "conv1d_17"
+            ],
+            "name": "conv1d_17_nl",
+            "nonlinearity": "softsign",
+            "out_shapes": [
+                [
+                    1,
+                    1,
+                    1
+                ]
+            ],
+            "outputs": [
+                "conv1d_17_nl"
+            ],
+            "type": "Nonlinearity"
+        }
+    ],
+    "maxlen_name": 27,
+    "md5": "6ee997bffb6d9005bb5208fcbfc7e6ec",
+    "model_files": [
+        "/home/xeratec/Documents/ETH/MLonMCU/B_Project/Model/01_OrangeMicroDark_WaveNet18_v1.h5"
+    ],
+    "model_n_params": 3257,
+    "model_name": "_OrangeMicroDark_WaveNet18_v1",
+    "model_size": 13028,
+    "model_type": "keras (keras_dump)",
+    "name": "wv18_v1",
+    "outputs": [
+        "conv1d_17_nl"
+    ],
+    "ram_io_size": [
+        8180,
+        4
+    ],
+    "ram_size": [
+        65888,
+        65888
+    ],
+    "report_version": 1.0,
+    "rom_cfact": null,
+    "rom_heap": [
+        0,
+        0
+    ],
+    "rom_heap_inspector": 3072,
+    "rom_inputs": [
+        {
+            "c_size": 8180,
+            "c_type": "ai_float",
+            "name": "input_0"
+        }
+    ],
+    "rom_l2_error_max": 0.0,
+    "rom_n_c_nodes": 18,
+    "rom_n_macc": 5122630,
+    "rom_n_macc_max": 473056,
+    "rom_outputs": [
+        {
+            "c_size": 4,
+            "c_type": "ai_float",
+            "name": "conv1d_17"
+        }
+    ],
+    "rom_size": 13028,
+    "rom_size_max": 800,
+    "rom_stack": [
+        0,
+        0
+    ],
+    "strategy": "heap_overlay_pool",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 3
+    },
+    "tools_version": {
+        "extra": null,
+        "major": 5,
+        "micro": 0,
+        "minor": 2
+    },
+    "version": "0.2"
+}

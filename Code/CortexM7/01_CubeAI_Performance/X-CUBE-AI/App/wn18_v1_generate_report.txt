@@ -1,0 +1,288 @@
+Neural Network Tools for STM32 v1.4.0 (AI tools v5.2.0)
+Created date       : 2020-11-20 20:19:32
+Parameters         : generate --name wn18_v1 -m /home/xeratec/Documents/ETH/MLonMCU/B_Project/Model/01_OrangeMicroDark_WaveNet18_v1.h5 --type keras --compression 1 --verbosity 1 --workspace /tmp/mxAI_workspace53285796559763029504088211198168 --output /home/xeratec/.stm32cubemx
+
+Exec/report summary (generate dur=0.90s err=0)
+------------------------------------------------------------------------------------------------------------------------
+model file         : /home/xeratec/Documents/ETH/MLonMCU/B_Project/Model/01_OrangeMicroDark_WaveNet18_v1.h5
+type               : keras (keras_dump) - tf.keras 2.4.0
+c_name             : wn18_v1
+compression        : None
+quantize           : None
+workspace dir      : /tmp/mxAI_workspace53285796559763029504088211198168
+output dir         : /home/xeratec/.stm32cubemx
+
+model_name         : _OrangeMicroDark_WaveNet18_v1
+model_hash         : 6ee997bffb6d9005bb5208fcbfc7e6ec
+input              : input_0 [2045 items, 7.99 KiB, ai_float, FLOAT32, (2045, 1, 1)]
+inputs (total)     : 7.99 KiB
+output             : conv1d_17 [1 items, 4 B, ai_float, FLOAT32, (1, 1, 1)]
+outputs (total)    : 4 B
+params #           : 3,257 items (12.72 KiB)
+macc               : 5,122,630
+weights (ro)       : 13,028 B (12.72 KiB) 
+activations (rw)   : 65,888 B (64.34 KiB) 
+ram (total)        : 74,072 B (72.34 KiB) = 65,888 + 8,180 + 4
+
+------------------------------------------------------------------------------------------------------------------------
+id  layer (type)                output shape      param #     connected to             macc           rom                
+------------------------------------------------------------------------------------------------------------------------
+0   input_0 (Input)             (2045, 1, 1)                                                                             
+    conv1d (Conv2D)             (2043, 1, 8)      32          input_0                  130,760        128                
+    conv1d_nl (Nonlinearity)    (2043, 1, 8)                  conv1d                                                     
+------------------------------------------------------------------------------------------------------------------------
+1   conv1d_1 (Conv2D)           (2039, 1, 8)      200         conv1d_nl                473,056        800                
+    conv1d_1_nl (Nonlinearity)  (2039, 1, 8)                  conv1d_1                                                   
+------------------------------------------------------------------------------------------------------------------------
+2   conv1d_2 (Conv2D)           (2031, 1, 8)      200         conv1d_1_nl              471,200        800                
+    conv1d_2_nl (Nonlinearity)  (2031, 1, 8)                  conv1d_2                                                   
+------------------------------------------------------------------------------------------------------------------------
+3   conv1d_3 (Conv2D)           (2015, 1, 8)      200         conv1d_2_nl              467,488        800                
+    conv1d_3_nl (Nonlinearity)  (2015, 1, 8)                  conv1d_3                                                   
+------------------------------------------------------------------------------------------------------------------------
+4   conv1d_4 (Conv2D)           (1983, 1, 8)      200         conv1d_3_nl              460,064        800                
+    conv1d_4_nl (Nonlinearity)  (1983, 1, 8)                  conv1d_4                                                   
+------------------------------------------------------------------------------------------------------------------------
+5   conv1d_5 (Conv2D)           (1919, 1, 8)      200         conv1d_4_nl              445,216        800                
+    conv1d_5_nl (Nonlinearity)  (1919, 1, 8)                  conv1d_5                                                   
+------------------------------------------------------------------------------------------------------------------------
+6   conv1d_6 (Conv2D)           (1791, 1, 8)      200         conv1d_5_nl              415,520        800                
+    conv1d_6_nl (Nonlinearity)  (1791, 1, 8)                  conv1d_6                                                   
+------------------------------------------------------------------------------------------------------------------------
+7   conv1d_7 (Conv2D)           (1535, 1, 8)      200         conv1d_6_nl              356,128        800                
+    conv1d_7_nl (Nonlinearity)  (1535, 1, 8)                  conv1d_7                                                   
+------------------------------------------------------------------------------------------------------------------------
+8   conv1d_8 (Conv2D)           (1023, 1, 8)      200         conv1d_7_nl              237,344        800                
+    conv1d_8_nl (Nonlinearity)  (1023, 1, 8)                  conv1d_8                                                   
+------------------------------------------------------------------------------------------------------------------------
+9   conv1d_9 (Conv2D)           (1021, 1, 8)      200         conv1d_8_nl              236,880        800                
+    conv1d_9_nl (Nonlinearity)  (1021, 1, 8)                  conv1d_9                                                   
+------------------------------------------------------------------------------------------------------------------------
+10  conv1d_10 (Conv2D)          (1017, 1, 8)      200         conv1d_9_nl              235,952        800                
+    conv1d_10_nl (Nonlinearity) (1017, 1, 8)                  conv1d_10                                                  
+------------------------------------------------------------------------------------------------------------------------
+11  conv1d_11 (Conv2D)          (1009, 1, 8)      200         conv1d_10_nl             234,096        800                
+    conv1d_11_nl (Nonlinearity) (1009, 1, 8)                  conv1d_11                                                  
+------------------------------------------------------------------------------------------------------------------------
+12  conv1d_12 (Conv2D)          (993, 1, 8)       200         conv1d_11_nl             230,384        800                
+    conv1d_12_nl (Nonlinearity) (993, 1, 8)                   conv1d_12                                                  
+------------------------------------------------------------------------------------------------------------------------
+13  conv1d_13 (Conv2D)          (961, 1, 8)       200         conv1d_12_nl             222,960        800                
+    conv1d_13_nl (Nonlinearity) (961, 1, 8)                   conv1d_13                                                  
+------------------------------------------------------------------------------------------------------------------------
+14  conv1d_14 (Conv2D)          (897, 1, 8)       200         conv1d_13_nl             208,112        800                
+    conv1d_14_nl (Nonlinearity) (897, 1, 8)                   conv1d_14                                                  
+------------------------------------------------------------------------------------------------------------------------
+15  conv1d_15 (Conv2D)          (769, 1, 8)       200         conv1d_14_nl             178,416        800                
+    conv1d_15_nl (Nonlinearity) (769, 1, 8)                   conv1d_15                                                  
+------------------------------------------------------------------------------------------------------------------------
+16  conv1d_16 (Conv2D)          (513, 1, 8)       200         conv1d_15_nl             119,024        800                
+    conv1d_16_nl (Nonlinearity) (513, 1, 8)                   conv1d_16                                                  
+------------------------------------------------------------------------------------------------------------------------
+17  conv1d_17 (Conv2D)          (1, 1, 1)         25          conv1d_16_nl             30             100                
+    conv1d_17_nl (Nonlinearity) (1, 1, 1)                     conv1d_17                                                  
+------------------------------------------------------------------------------------------------------------------------
+_OrangeMicroDark_WaveNet18_v1 p=3257(12.72 KBytes) macc=5122630 rom=12.72 KBytes ram=64.34 KiB io_ram=7.99 KiB
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name         : _orangemicrodark_wavenet18_v1
+c-name             : wn18_v1
+c-node #           : 18
+c-array #          : 55
+activations size   : 65888
+weights size       : 13028
+macc               : 5122630
+inputs             : ['input_0_output_array']
+outputs            : ['conv1d_17_output_array']
+
+
+C-Arrays (55)
+------------------------------------------------------------------------------------------------------------------------
+c_id  name (*_array)     item/size           mem-pool     c-type       fmt    comment            
+------------------------------------------------------------------------------------------------------------------------
+0     conv1d_17_bias     1/4                 weights      const float  float                     
+1     conv1d_17_weights  24/96               weights      const float  float                     
+2     conv1d_16_bias     8/32                weights      const float  float                     
+3     conv1d_16_weights  192/768             weights      const float  float                     
+4     conv1d_15_bias     8/32                weights      const float  float                     
+5     conv1d_15_weights  192/768             weights      const float  float                     
+6     conv1d_14_bias     8/32                weights      const float  float                     
+7     conv1d_14_weights  192/768             weights      const float  float                     
+8     conv1d_13_bias     8/32                weights      const float  float                     
+9     conv1d_13_weights  192/768             weights      const float  float                     
+10    conv1d_12_bias     8/32                weights      const float  float                     
+11    conv1d_12_weights  192/768             weights      const float  float                     
+12    conv1d_11_bias     8/32                weights      const float  float                     
+13    conv1d_11_weights  192/768             weights      const float  float                     
+14    conv1d_10_bias     8/32                weights      const float  float                     
+15    conv1d_10_weights  192/768             weights      const float  float                     
+16    conv1d_9_bias      8/32                weights      const float  float                     
+17    conv1d_9_weights   192/768             weights      const float  float                     
+18    conv1d_8_bias      8/32                weights      const float  float                     
+19    conv1d_8_weights   192/768             weights      const float  float                     
+20    conv1d_7_bias      8/32                weights      const float  float                     
+21    conv1d_7_weights   192/768             weights      const float  float                     
+22    conv1d_6_bias      8/32                weights      const float  float                     
+23    conv1d_6_weights   192/768             weights      const float  float                     
+24    conv1d_5_bias      8/32                weights      const float  float                     
+25    conv1d_5_weights   192/768             weights      const float  float                     
+26    conv1d_4_bias      8/32                weights      const float  float                     
+27    conv1d_4_weights   192/768             weights      const float  float                     
+28    conv1d_3_bias      8/32                weights      const float  float                     
+29    conv1d_3_weights   192/768             weights      const float  float                     
+30    conv1d_2_bias      8/32                weights      const float  float                     
+31    conv1d_2_weights   192/768             weights      const float  float                     
+32    conv1d_1_bias      8/32                weights      const float  float                     
+33    conv1d_1_weights   192/768             weights      const float  float                     
+34    conv1d_bias        8/32                weights      const float  float                     
+35    conv1d_weights     24/96               weights      const float  float                     
+36    input_0_output     2045/8180           user         float        float  /input             
+37    conv1d_output      16344/65376         activations  float        float                     
+38    conv1d_1_output    16312/65248         activations  float        float                     
+39    conv1d_2_output    16248/64992         activations  float        float                     
+40    conv1d_3_output    16120/64480         activations  float        float                     
+41    conv1d_4_output    15864/63456         activations  float        float                     
+42    conv1d_5_output    15352/61408         activations  float        float                     
+43    conv1d_6_output    14328/57312         activations  float        float                     
+44    conv1d_7_output    12280/49120         activations  float        float                     
+45    conv1d_8_output    8184/32736          activations  float        float                     
+46    conv1d_9_output    8168/32672          activations  float        float                     
+47    conv1d_10_output   8136/32544          activations  float        float                     
+48    conv1d_11_output   8072/32288          activations  float        float                     
+49    conv1d_12_output   7944/31776          activations  float        float                     
+50    conv1d_13_output   7688/30752          activations  float        float                     
+51    conv1d_14_output   7176/28704          activations  float        float                     
+52    conv1d_15_output   6152/24608          activations  float        float                     
+53    conv1d_16_output   4104/16416          activations  float        float                     
+54    conv1d_17_output   1/4                 user         float        float  /output            
+------------------------------------------------------------------------------------------------------------------------
+
+
+C-Layers (18)
+------------------------------------------------------------------------------------------------------------------------
+c_id  name (*_layer)  id  type    macc        rom         tensors               shape (array id)                       
+------------------------------------------------------------------------------------------------------------------------
+0     conv1d          0   conv2d  130760      128         I: input_0_output     [1, 2045, 1, 1] (36)                   
+                                                          W: conv1d_weights                                            
+                                                          W: conv1d_bias                                               
+                                                          O: conv1d_output      [1, 2043, 1, 8] (37)                   
+------------------------------------------------------------------------------------------------------------------------
+1     conv1d_1        1   conv2d  473056      800         I: conv1d_output      [1, 2043, 1, 8] (37)                   
+                                                          W: conv1d_1_weights                                          
+                                                          W: conv1d_1_bias                                             
+                                                          O: conv1d_1_output    [1, 2039, 1, 8] (38)                   
+------------------------------------------------------------------------------------------------------------------------
+2     conv1d_2        2   conv2d  471200      800         I: conv1d_1_output    [1, 2039, 1, 8] (38)                   
+                                                          W: conv1d_2_weights                                          
+                                                          W: conv1d_2_bias                                             
+                                                          O: conv1d_2_output    [1, 2031, 1, 8] (39)                   
+------------------------------------------------------------------------------------------------------------------------
+3     conv1d_3        3   conv2d  467488      800         I: conv1d_2_output    [1, 2031, 1, 8] (39)                   
+                                                          W: conv1d_3_weights                                          
+                                                          W: conv1d_3_bias                                             
+                                                          O: conv1d_3_output    [1, 2015, 1, 8] (40)                   
+------------------------------------------------------------------------------------------------------------------------
+4     conv1d_4        4   conv2d  460064      800         I: conv1d_3_output    [1, 2015, 1, 8] (40)                   
+                                                          W: conv1d_4_weights                                          
+                                                          W: conv1d_4_bias                                             
+                                                          O: conv1d_4_output    [1, 1983, 1, 8] (41)                   
+------------------------------------------------------------------------------------------------------------------------
+5     conv1d_5        5   conv2d  445216      800         I: conv1d_4_output    [1, 1983, 1, 8] (41)                   
+                                                          W: conv1d_5_weights                                          
+                                                          W: conv1d_5_bias                                             
+                                                          O: conv1d_5_output    [1, 1919, 1, 8] (42)                   
+------------------------------------------------------------------------------------------------------------------------
+6     conv1d_6        6   conv2d  415520      800         I: conv1d_5_output    [1, 1919, 1, 8] (42)                   
+                                                          W: conv1d_6_weights                                          
+                                                          W: conv1d_6_bias                                             
+                                                          O: conv1d_6_output    [1, 1791, 1, 8] (43)                   
+------------------------------------------------------------------------------------------------------------------------
+7     conv1d_7        7   conv2d  356128      800         I: conv1d_6_output    [1, 1791, 1, 8] (43)                   
+                                                          W: conv1d_7_weights                                          
+                                                          W: conv1d_7_bias                                             
+                                                          O: conv1d_7_output    [1, 1535, 1, 8] (44)                   
+------------------------------------------------------------------------------------------------------------------------
+8     conv1d_8        8   conv2d  237344      800         I: conv1d_7_output    [1, 1535, 1, 8] (44)                   
+                                                          W: conv1d_8_weights                                          
+                                                          W: conv1d_8_bias                                             
+                                                          O: conv1d_8_output    [1, 1023, 1, 8] (45)                   
+------------------------------------------------------------------------------------------------------------------------
+9     conv1d_9        9   conv2d  236880      800         I: conv1d_8_output    [1, 1023, 1, 8] (45)                   
+                                                          W: conv1d_9_weights                                          
+                                                          W: conv1d_9_bias                                             
+                                                          O: conv1d_9_output    [1, 1021, 1, 8] (46)                   
+------------------------------------------------------------------------------------------------------------------------
+10    conv1d_10       10  conv2d  235952      800         I: conv1d_9_output    [1, 1021, 1, 8] (46)                   
+                                                          W: conv1d_10_weights                                         
+                                                          W: conv1d_10_bias                                            
+                                                          O: conv1d_10_output   [1, 1017, 1, 8] (47)                   
+------------------------------------------------------------------------------------------------------------------------
+11    conv1d_11       11  conv2d  234096      800         I: conv1d_10_output   [1, 1017, 1, 8] (47)                   
+                                                          W: conv1d_11_weights                                         
+                                                          W: conv1d_11_bias                                            
+                                                          O: conv1d_11_output   [1, 1009, 1, 8] (48)                   
+------------------------------------------------------------------------------------------------------------------------
+12    conv1d_12       12  conv2d  230384      800         I: conv1d_11_output   [1, 1009, 1, 8] (48)                   
+                                                          W: conv1d_12_weights                                         
+                                                          W: conv1d_12_bias                                            
+                                                          O: conv1d_12_output   [1, 993, 1, 8] (49)                    
+------------------------------------------------------------------------------------------------------------------------
+13    conv1d_13       13  conv2d  222960      800         I: conv1d_12_output   [1, 993, 1, 8] (49)                    
+                                                          W: conv1d_13_weights                                         
+                                                          W: conv1d_13_bias                                            
+                                                          O: conv1d_13_output   [1, 961, 1, 8] (50)                    
+------------------------------------------------------------------------------------------------------------------------
+14    conv1d_14       14  conv2d  208112      800         I: conv1d_13_output   [1, 961, 1, 8] (50)                    
+                                                          W: conv1d_14_weights                                         
+                                                          W: conv1d_14_bias                                            
+                                                          O: conv1d_14_output   [1, 897, 1, 8] (51)                    
+------------------------------------------------------------------------------------------------------------------------
+15    conv1d_15       15  conv2d  178416      800         I: conv1d_14_output   [1, 897, 1, 8] (51)                    
+                                                          W: conv1d_15_weights                                         
+                                                          W: conv1d_15_bias                                            
+                                                          O: conv1d_15_output   [1, 769, 1, 8] (52)                    
+------------------------------------------------------------------------------------------------------------------------
+16    conv1d_16       16  conv2d  119024      800         I: conv1d_15_output   [1, 769, 1, 8] (52)                    
+                                                          W: conv1d_16_weights                                         
+                                                          W: conv1d_16_bias                                            
+                                                          O: conv1d_16_output   [1, 513, 1, 8] (53)                    
+------------------------------------------------------------------------------------------------------------------------
+17    conv1d_17       17  conv2d  30          100         I: conv1d_16_output   [1, 513, 1, 8] (53)                    
+                                                          W: conv1d_17_weights                                         
+                                                          W: conv1d_17_bias                                            
+                                                          O: conv1d_17_output   [1, 1, 1, 1] (54)                      
+------------------------------------------------------------------------------------------------------------------------
+
+
+ 
+Complexity per-layer - macc=5,122,630 rom=13,028
+------------------------------------------------------------------------------------------------------------------------
+id      layer (type)                macc                                    rom                                    
+------------------------------------------------------------------------------------------------------------------------
+0       conv1d (Conv2D)             |||||||||                         2.6%  |||||                             1.0% 
+1       conv1d_1 (Conv2D)           |||||||||||||||||||||||||||||||   9.2%  |||||||||||||||||||||||||||||||   6.1% 
+2       conv1d_2 (Conv2D)           ||||||||||||||||||||||||||||||    9.2%  |||||||||||||||||||||||||||||||   6.1% 
+3       conv1d_3 (Conv2D)           ||||||||||||||||||||||||||||||    9.1%  |||||||||||||||||||||||||||||||   6.1% 
+4       conv1d_4 (Conv2D)           ||||||||||||||||||||||||||||||    9.0%  |||||||||||||||||||||||||||||||   6.1% 
+5       conv1d_5 (Conv2D)           |||||||||||||||||||||||||||||     8.7%  |||||||||||||||||||||||||||||||   6.1% 
+6       conv1d_6 (Conv2D)           |||||||||||||||||||||||||||       8.1%  |||||||||||||||||||||||||||||||   6.1% 
+7       conv1d_7 (Conv2D)           |||||||||||||||||||||||           7.0%  |||||||||||||||||||||||||||||||   6.1% 
+8       conv1d_8 (Conv2D)           ||||||||||||||||                  4.6%  |||||||||||||||||||||||||||||||   6.1% 
+9       conv1d_9 (Conv2D)           ||||||||||||||||                  4.6%  |||||||||||||||||||||||||||||||   6.1% 
+10      conv1d_10 (Conv2D)          |||||||||||||||                   4.6%  |||||||||||||||||||||||||||||||   6.1% 
+11      conv1d_11 (Conv2D)          |||||||||||||||                   4.6%  |||||||||||||||||||||||||||||||   6.1% 
+12      conv1d_12 (Conv2D)          |||||||||||||||                   4.5%  |||||||||||||||||||||||||||||||   6.1% 
+13      conv1d_13 (Conv2D)          |||||||||||||||                   4.4%  |||||||||||||||||||||||||||||||   6.1% 
+14      conv1d_14 (Conv2D)          ||||||||||||||                    4.1%  |||||||||||||||||||||||||||||||   6.1% 
+15      conv1d_15 (Conv2D)          ||||||||||||                      3.5%  |||||||||||||||||||||||||||||||   6.1% 
+16      conv1d_16 (Conv2D)          ||||||||                          2.3%  |||||||||||||||||||||||||||||||   6.1% 
+17      conv1d_17 (Conv2D)          |                                 0.0%  ||||                              0.8% 
+------------------------------------------------------------------------------------------------------------------------
+
+
+Evaluation report (summary)
+---------------------------------------------
+NOT EVALUATED
