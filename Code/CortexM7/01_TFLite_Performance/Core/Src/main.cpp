@@ -20,7 +20,7 @@
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/version.h"
-#include "04_OrangeMicroDark_WN12_v1_tfl_int8.h"
+#include "04_OrangeMicroDark_WN12_v1_tfl.h"
 //#include "NoDilation.h"
 
 #include "tensorflow/lite/micro/debug_log.h"
@@ -83,10 +83,10 @@ int main(void) {
 	static uint8_t tensor_arena[kTensorArenaSize]  __attribute__((aligned (16)));
 
 	/* Enable I-Cache---------------------------------------------------------*/
-	//SCB_EnableICache();
+	SCB_EnableICache();
 
 	/* Enable D-Cache---------------------------------------------------------*/
-	//SCB_EnableDCache();
+	SCB_EnableDCache();
 
 	/* MCU Configuration--------------------------------------------------------*/
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
